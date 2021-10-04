@@ -1,0 +1,19 @@
+{
+  "name": "morse-code",
+  "version": "1.0.0",
+  "description": "Morse Encode-Decode Project.",
+  "main": "./lib/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jadack/MorseCode.git"
+  },
+  "author": "Jack Pacheco",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jadack/MorseCode/issues"
+  },
+  "homepage": "https://github.com/Jadack/MorseCode#readme"
+}
