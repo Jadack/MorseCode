@@ -3,10 +3,15 @@ import { expect } from 'chai';
 
 describe('MorseCode', () => {
 
-  it('Should return an invalid message with invalid input', () => {
-    let morseCode = new MorseCode();
-    expect(morseCode.morseEncode(123535)).to.equal('Invalid Input');
-  });
+  // it('Should return an invalid message with invalid input', () => {
+  //   let morseCode = new MorseCode();
+  //   expect(morseCode.morseEncode(123535)).to.equal('Invalid Input');
+  // });
+
+  // it('Should return an invalid message with invalid separator', () => {
+  //   let morseCode = new MorseCode();
+  //   expect(morseCode.morseEncode('Hello', 123)).to.equal('Invalid Separator');
+  // });
 
   it('Should return an empty string with empty input', () => {
     let morseCode = new MorseCode();
@@ -15,7 +20,7 @@ describe('MorseCode', () => {
 
   it('Should return an empty string with invalid characters', () => {
     let morseCode = new MorseCode();
-    expect(morseCode.morseEncode('# $ % - . ! + = ? < > ~ | { } [ ] * ^')).to.equal('');
+    expect(morseCode.morseEncode('# $ % - ! + = ? < > ~ | { } [ ] * ^')).to.equal('');
   });
 
   // Space is the default separator
@@ -31,12 +36,34 @@ describe('MorseCode', () => {
   });
 
   // Integrated separator is a previows and special separator preconfigured
-  it('Should return valid value with integrated separator ((....)(.)(.-..)(.-..)(---)) with Hello word', () => {
+
+  // Parenthesis
+  it('Should return valid value with integrated separator ((....) (.) (.-..) (.-..) (---)) with Hello word', () => {
     let morseCode = new MorseCode();
-    expect(morseCode.morseEncode('Hello', '-p')).to.equal('(....)(.)(.-..)(.-..)(---)');
+    expect(morseCode.morseEncode('Hello', '-p')).to.equal('(....) (.) (.-..) (.-..) (---)');
   });
-  it('Should return valid value with integrated separator ((....)(.)(.-..)(.-..)(---)) with Hello word', () => {
+  it('Should return valid value with integrated separator ((....) (.) (.-..) (.-..) (---)) with Hello word', () => {
     let morseCode = new MorseCode();
-    expect(morseCode.morseEncode('Hello', '--parenthesis')).to.equal('(....)(.)(.-..)(.-..)(---)');
+    expect(morseCode.morseEncode('Hello', '--parenthesis')).to.equal('(....) (.) (.-..) (.-..) (---)');
+  });
+
+  // Sharp
+  it('Should return valid value with integrated separator (#....# #.# #.-..# #.-..# #---#) with Hello word', () => {
+    let morseCode = new MorseCode();
+    expect(morseCode.morseEncode('Hello', '-s')).to.equal('#....# #.# #.-..# #.-..# #---#');
+  });
+  it('Should return valid value with integrated separator (#....# #.# #.-..# #.-..# #---#) with Hello word', () => {
+    let morseCode = new MorseCode();
+    expect(morseCode.morseEncode('Hello', '--sharp')).to.equal('#....# #.# #.-..# #.-..# #---#');
+  });
+
+  // Asterisk
+  it('Should return valid value with integrated separator (*....* *.* *.-..* *.-..* *---*) with Hello word', () => {
+    let morseCode = new MorseCode();
+    expect(morseCode.morseEncode('Hello', '-a')).to.equal('*....* *.* *.-..* *.-..* *---*');
+  });
+  it('Should return valid value with integrated separator (*....* *.* *.-..* *.-..* *---*) with Hello word', () => {
+    let morseCode = new MorseCode();
+    expect(morseCode.morseEncode('Hello', '--asterisk')).to.equal('*....* *.* *.-..* *.-..* *---*');
   });
 });
