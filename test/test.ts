@@ -39,6 +39,11 @@ describe('MorseCode', () => {
     expect(morseCode.morseEncode('Hello World')).to.equal('.... . .-.. .-.. ---  .-- --- .-. .-.. -..');
   });
 
+  it('Should return valid value with default separator (..--- ..---  .---- -----) with 22 10 numbers', () => {
+    let morseCode = new MorseCode();
+    expect(morseCode.morseEncode('22 10')).to.equal('..--- ..---  .---- -----');
+  });
+
   // Custom separator is the user indication
   it('Should return valid value with custom separator (...././.-../.-../---) with Hello word', () => {
     let morseCode = new MorseCode();

@@ -2,7 +2,8 @@
   "name": "morse-code",
   "version": "1.0.0",
   "description": "Morse Encode-Decode Project.",
-  "main": "./lib/app.js",
+  "main": "lib/app.js",
+  "types": "lib/app.d.ts",
   "scripts": {
     "test": "mocha --require ts-node/register --watch-extensions ts 'test/**/*.ts'",
     "start": "node ./lib/app.js",
