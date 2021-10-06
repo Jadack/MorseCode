@@ -1,4 +1,4 @@
-# MorseCode
+# MorseCode Library
   Un proyecto para traducir texto a código morse y código morse a texto, utilizando TypeScript.
 
 ## Documentación

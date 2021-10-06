@@ -1,5 +1,5 @@
 {
-  "name": "morse-code",
+  "name": "morse-code-lib",
   "version": "1.0.0",
   "description": "Morse Encode-Decode Project.",
   "main": "lib/app.js",
