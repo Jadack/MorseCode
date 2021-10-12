@@ -76,9 +76,33 @@ export class MorseCode {
     return translatedText;
   }
 
-  morseDecode(text: string, separator: string = ''): string {
+  morseDecode(text: string, convention: string = '--lowerCase'): string {
     let translatedText: string = '';
-    translatedText = text;
+    if (typeof text !== 'string') {
+      translatedText = 'Invalid Input';
+    } else if(typeof convention !== 'string') {
+      translatedText = 'Invalid Convention';
+    } else {
+      text = text.replace(/[^a-zA-Z0-9\\s.-]/g, ' ').replace(/\s\s\s/g, ' ');
+      text.split(' ').map(a => {
+        a.split(' ').forEach(b => {
+          typeof Object.keys(this.morseCode).find(key => this.morseCode[key] === b) !== 'undefined'
+            ? (translatedText += `${Object.keys(this.morseCode).find(key => this.morseCode[key] === b)}`)
+            : (translatedText += '°')
+        });
+      });
+      translatedText = translatedText.replace(/\s/g, '').replace(/\°/g, ' ').trim();
+
+      convention === '-lc' || convention === '--lowerCase'
+      ? translatedText = translatedText.toLowerCase()
+      : convention === '-uc' || convention === '--upperCase'
+      ? translatedText = translatedText.toUpperCase()
+      : convention === '-pc' || convention === '--pascalCase'
+      ? translatedText = translatedText.trim().replace(/\w+/g, (w) => {
+          return `${w[0].toUpperCase()}${w.slice(1).toLowerCase()}`
+        })
+      : translatedText = 'Invalid Convention';
+    }
     return translatedText;
   }
 }
