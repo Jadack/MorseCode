@@ -28,7 +28,26 @@ La misma posee una función llamada `morseEncode()` la cual toma dos parámetros
   ````
 
 ### Morse Decode
-// TODO: Implementación de Morse Decode pendiente para próxima versión debido a estar fuera del alcance inicial.
+ Para el uso de la librería se tomará una convención por default que es lowerCase, sin empargo se podrá utilizar alguna de las ya configuradas.
+
+    Separadores Configurados:
+    -lc --lowerCase   Las letras de las palabras salen en Minúscula (hola).
+    -uc --upperCase   Las letras de las palabras salen en Mayúscula (HOLA).
+    -pc --pascalCase   La primera letra de cada palabra sale Mayúscula y las demás en Minúscula (Hola).
+
+La misma posee una función llamada `morseDecode()` la cual toma dos parámetros, uno es el string que posee el texto morse para convertir en texto y el otro la convención.
+  #### Ejemplo
+  ````sh
+  // Imprimir el Código Morse con la convención por default.
+  import { MorseCode } from 'morse-code';
+  let morseCode = new MorseCode();
+  console.log(morseCode.morseDecode('.... . .-.. .-.. ---'));
+
+  // Imprimir el Código Morse con la convención configurada.
+  import { MorseCode } from 'morse-code';
+  let morseCode = new MorseCode();
+  console.log(morseCode.morseDecode('Hello', '--pascalCase'));
+  ````
 
 
 ## Autor
