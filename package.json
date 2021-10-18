@@ -1,6 +1,6 @@
 {
   "name": "morse-code-lib",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Morse Encode-Decode Project.",
   "main": "lib/app.js",
   "types": "lib/app.d.ts",

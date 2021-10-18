@@ -17,12 +17,12 @@ La misma posee una función llamada `morseEncode()` la cual toma dos parámetros
   #### Ejemplo
   ````sh
   // Imprimir la palabra Hello en Código Morse con el separador por default.
-  import { MorseCode } from 'morse-code';
+  import { MorseCode } from 'morse-code-lib';
   let morseCode = new MorseCode();
   console.log(morseCode.morseEncode('Hello'));
 
   // Imprimir la palabra Hello en Código Morse con un separador custom.
-  import { MorseCode } from 'morse-code';
+  import { MorseCode } from 'morse-code-lib';
   let morseCode = new MorseCode();
   console.log(morseCode.morseEncode('Hello', '/'));
   ````
@@ -39,12 +39,12 @@ La misma posee una función llamada `morseDecode()` la cual toma dos parámetros
   #### Ejemplo
   ````sh
   // Imprimir el Código Morse con la convención por default.
-  import { MorseCode } from 'morse-code';
+  import { MorseCode } from 'morse-code-lib';
   let morseCode = new MorseCode();
   console.log(morseCode.morseDecode('.... . .-.. .-.. ---'));
 
   // Imprimir el Código Morse con la convención configurada.
-  import { MorseCode } from 'morse-code';
+  import { MorseCode } from 'morse-code-lib';
   let morseCode = new MorseCode();
   console.log(morseCode.morseDecode('Hello', '--pascalCase'));
   ````
